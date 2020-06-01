@@ -160,6 +160,37 @@
 	// 	});	
 	// };
 
+
+	var OnContactMeClick = function(){
+		$("#contact_me_btn").click(function(){
+			var element = document.getElementById("colorlib-contact");
+			element.scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"});
+			
+
+			var to_animate = [$("#contact_animate_box_img"), $("#contact_animate_box_contact"), $("#contact_animate_box_title")]
+
+			setTimeout(function(){
+
+				$.each(to_animate, function(k){
+					var el = $(this);
+					el.addClass('item-animate');
+					setTimeout( function () {
+						var effect = el.data('animate-effect');
+						if ( effect === 'fadeIn') {
+							el.addClass('fadeIn animated');
+						} else {
+							el.addClass('fadeInUp animated');
+						}
+
+						el.removeClass('item-animate');
+					},  k * 200, 'easeInOutExpo' );
+				});
+					
+	
+			}, 500);
+		})
+	}
+
 	
 
 
@@ -169,7 +200,8 @@
 		burgerMenu();
 		counterWayPoint();
 		contentWayPoint();
-		owlCarouselFeatureSlide();
+		// owlCarouselFeatureSlide();
+		OnContactMeClick();
 	});
 
 
