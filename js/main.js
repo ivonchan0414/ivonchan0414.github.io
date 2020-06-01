@@ -49,7 +49,7 @@
 		var i = 0;
 		$('.animate-box').waypoint( function( direction ) {
 
-			if( direction === 'down' && !$(this.element).hasClass('animated') ) {
+			if( !$(this.element).hasClass('animated') ) {
 				
 				i++;
 
